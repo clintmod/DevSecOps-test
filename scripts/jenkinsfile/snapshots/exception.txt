@@ -1,0 +1,7 @@
+Setting timeout to 2 HOURS
+Running on node default
+Setting log rotate to 30 days
+Running stage: Checkout
+Running post build actions
+Notifying github
+slackSend channel:#jenkins message:Build failed: asdf 1 (<asdf2/|Open>) color:danger

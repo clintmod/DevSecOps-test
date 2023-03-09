@@ -1,0 +1,71 @@
+{
+    "extends": "recommended",
+    "rules": {
+        "ClassJavadoc": {
+            "enabled": false
+        },
+        "ClassStartsWithBlankLine": {
+            "enabled": false
+        },
+        "ClosureAsLastMethodParameter": {
+            "enabled": false
+        },
+        "ClosureStatementOnOpeningLineOfMultipleLineClosure": {
+            "enabled": false
+        },
+        "CompileStatic": {
+            "enabled": false
+        },
+        "DuplicateMapLiteral": {
+            "enabled": false
+        },
+        "DuplicateStringLiteral": {
+            "enabled": false
+        },
+        "ExplicitLinkedHashMapInstantiation": {
+            "enabled": false
+        },
+        "FieldTypeRequired": {
+            "enabled": false
+        },
+        "Indentation": {
+            "enabled": false
+        },
+        "JUnitPublicNonTestMethod": {
+            "enabled": false
+        },
+        "JUnitPublicProperty": {
+            "enabled": false
+        },
+        "JUnitStyleAssertions": {
+            "enabled": false
+        },
+        "LineLength": {
+            "enabled": false
+        },
+        "MethodParameterTypeRequired": {
+            "enabled": false
+        },
+        "MethodReturnTypeRequired": {
+            "enabled": false
+        },
+        "NoDef": {
+            "enabled": false
+        },
+        "PropertyName": {
+            "enabled": false
+        },
+        "ThrowException": {
+            "enabled": false
+        },
+        "UnnecessaryGetter": {
+            "enabled": false
+        },
+        "UnnecessaryObjectReferences": {
+            "enabled": false
+        },
+        "VariableTypeRequired": {
+            "enabled": false
+        }
+    }
+}

@@ -1,0 +1,14 @@
+Setting timeout to 2 HOURS
+Running on node default
+Setting log rotate to 30 days
+Running stage: Checkout
+Running stage: Build
+Running sh command: make docker-build
+Running stage: Scan
+Running sh command: make docker-scan
+Running stage: Docker Push
+Using username and password [credentialsId:docker-hub-creds, passwordVariable:DOCKER_HUB_USER, usernameVariable:DOCKER_HUB_PASSWORD]
+Running sh command: make docker-push
+Running post build actions
+Notifying github
+slackSend channel:#jenkins message:Build fixed: asdf 1 (<asdf2/|Open>) color:good
