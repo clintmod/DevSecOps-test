@@ -31,6 +31,7 @@ def runPipeline() {
     stage('Build') { sh 'make docker-build' }
     stage('Scan') { sh 'make docker-scan' }
     stage('Docker Push') { dockerPush() }
+    stage('Docker Push') { sh 'make k8s-deploy' }
     // stage('Deploy') { deploy() }
     // stage('Check SHA1') { checkSha1() }
 }

@@ -1,0 +1,15 @@
+.git
+.gitignore
+.groovylintrc.json
+.trivyignore
+Jenkinsfile
+Makefile
+README
+docker
+docs
+get-pip.py
+k8s
+reports
+requirements.txt
+scripts
+vars.mk

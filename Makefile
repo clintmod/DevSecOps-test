@@ -33,14 +33,17 @@ docker-scan: reports
 	@echo
 	scripts/trivy-scan.sh
 
+k8s-deploy:
+	kubectl apply -f k8s
+
 k3d-install:
 	apt install k3d
 
 k3d-cluster-create:
 	k3d cluster create -p "8081:80@loadbalancer" --agents 2
 
-kubectl-create-deployment:
-	kubectl create deployment nginx --image=nginx
+k3d-cluster-delete:
+	k3d cluster delete
 
 printenv:
 	env | sort
