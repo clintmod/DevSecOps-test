@@ -11,9 +11,7 @@ The following test was created to evaluate DevSecOps skills.
 - You can find the image here: https://hub.docker.com/r/clintmod/devsecops-test/tags
 - The git repo is here: https://github.com/clintmod/DevSecOps-test
 
-2. For the previously created image
-a. Share build times
-b. How would you improve build times?
+2. For the previously created image:
 
 **Answer**:
 
@@ -29,8 +27,6 @@ b. How would you improve build times?
 - Use layers with caching that you can pull from an artifact repo
 
 3. Scan the recently created container and evaluate the CVEs that it might contain.
-a. Create a report of your findings and follow best practices to remediate the CVE
-b. What would you do to avoid deploying malicious packages?
 
 **Answer**:
 
@@ -104,9 +100,10 @@ Using Kubernetes you need to provide all your employees with a way of launching 
 The following are the basic needs for it:
 
 1. UI, CI/CD, workflow or other tool that will allow people to select options for:
-a. Base image
-b. Packages
-c. Mem/CPU/GPU requests
+
+    a. Base image
+    b. Packages
+    c. Mem/CPU/GPU requests
 
 **Answer**:
 
@@ -144,7 +141,8 @@ helm upgrade --install --create-namespace -n portainer portainer portainer/porta
 #### -----------------------
 
 2. Monitor each environment and make sure that:
-a. Resources request is accurate (requested vs used)
+
+    a. Resources request is accurate (requested vs used)
 
 **Answer**:
 
