@@ -76,6 +76,21 @@ b. What would you do to avoid deploying malicious packages?
 - I could also use k8s dashboard to manually (yuk) watch it succeed
 - I could also use kubectl in watch mode to watch the deployment go green
 - I would also setup the correct probes so that I know if the containers are healthy
+- I ran this to make sure the deployment is acutally working and exposed on the Jenkins server
+```
+kubectl cluster-info
+jenkins@localhost:~/workspace/devsecops-test$ kubectl cluster-info
+Kubernetes control plane is running at https://0.0.0.0:46515
+CoreDNS is running at https://0.0.0.0:46515/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+Metrics-server is running at https://0.0.0.0:46515/api/v1/namespaces/kube-system/services/https:metrics-server:https/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+jenkins@localhost:~/workspace/devsecops-test$ kubectl get pods
+NAME                              READY   STATUS    RESTARTS   AGE
+devsecops-test-79cf988dd4-4p5w4   1/1     Running   0          28s
+jenkins@localhost:~/workspace/devsecops-test$ curl http://localhost:8081
+hello
+```
 
 
 ## Project
