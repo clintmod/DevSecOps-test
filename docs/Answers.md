@@ -49,6 +49,8 @@ b. What would you do to avoid deploying malicious packages?
 **Answer**:
 
 - Here is the deployment/service: https://github.com/clintmod/DevSecOps-test/tree/main/k8s
+- I wrote a python script to start an simple http web server that serves up the contents of the static directory
+- The static dir contains an index.html file that has the word `hello` in it 
 
 5. Expose the deployed resource
 
@@ -56,6 +58,22 @@ b. What would you do to avoid deploying malicious packages?
 
 - Here is the ingressroute: https://github.com/clintmod/DevSecOps-test/tree/main/k8s
 - I used k3d/k3s which uses traefik as an ingress controller by default
+- I ran this to make sure the deployment is actually working and exposed on the Jenkins server:
+
+```
+kubectl cluster-info
+jenkins@localhost:~/workspace/devsecops-test$ kubectl cluster-info
+Kubernetes control plane is running at https://0.0.0.0:46515
+CoreDNS is running at https://0.0.0.0:46515/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+Metrics-server is running at https://0.0.0.0:46515/api/v1/namespaces/kube-system/services/https:metrics-server:https/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+jenkins@localhost:~/workspace/devsecops-test$ kubectl get pods
+NAME                              READY   STATUS    RESTARTS   AGE
+devsecops-test-79cf988dd4-4p5w4   1/1     Running   0          28s
+jenkins@localhost:~/workspace/devsecops-test$ curl http://localhost:8081
+hello
+```
 
 6. Every step mentioned above have to be in a code repository with automated CI/CD
 
@@ -76,21 +94,7 @@ b. What would you do to avoid deploying malicious packages?
 - I could also use k8s dashboard to manually (yuk) watch it succeed
 - I could also use kubectl in watch mode to watch the deployment go green
 - I would also setup the correct probes so that I know if the containers are healthy
-- I ran this to make sure the deployment is acutally working and exposed on the Jenkins server
-```
-kubectl cluster-info
-jenkins@localhost:~/workspace/devsecops-test$ kubectl cluster-info
-Kubernetes control plane is running at https://0.0.0.0:46515
-CoreDNS is running at https://0.0.0.0:46515/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
-Metrics-server is running at https://0.0.0.0:46515/api/v1/namespaces/kube-system/services/https:metrics-server:https/proxy
-
-To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
-jenkins@localhost:~/workspace/devsecops-test$ kubectl get pods
-NAME                              READY   STATUS    RESTARTS   AGE
-devsecops-test-79cf988dd4-4p5w4   1/1     Running   0          28s
-jenkins@localhost:~/workspace/devsecops-test$ curl http://localhost:8081
-hello
-```
+- I would run curl to check the value of the result is `hello`
 
 
 ## Project
