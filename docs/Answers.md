@@ -75,7 +75,7 @@ hello
 
 **Answer**:
 
-- I found a vps with 4 cores and 8gb on sale for $2/month/6 months at ionos: https://www.ionos.com/servers/vps#plans
+- I found a vps with 6 cores and 18gb on sale for $2/month/6 months at ionos: https://www.ionos.com/servers/vps#plans
 - Installed java, jenkins, nginx (proxy) and certbot (automated free ssl)
 - I setup a job with this Jenkinsfile: https://github.com/clintmod/DevSecOps-test/blob/main/Jenkinsfile
 - I wrote snapshot based unit tests for the Jenkinsfile here (my own design): https://github.com/clintmod/DevSecOps-test/tree/main/scripts/jenkinsfile
